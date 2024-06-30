@@ -18,3 +18,8 @@ if [ "$1" == "--logs" ]; then
     done
 fi
 
+if [ "$1" == "--help" ]; then
+    echo "--date: Wyświetla dzisiejszą datę"
+    echo "--logs [number]: Tworzy określoną liczbę plików logx.txt"
+    echo "--help: Wyświetla dostępne opcje"
+fi
