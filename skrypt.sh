@@ -44,3 +44,19 @@ case "$1" in
         ;;
 esac
 
+case "$1" in
+    --init)
+        git clone <URL_repozytorium> $(pwd)
+        export PATH=$PATH:$(pwd)
+        ;;
+    --error|-e)
+        count=${2:-100}
+        mkdir -p errorx
+        for ((i=1; i<=count; i++)); do
+            echo "error${i}/error${i}.txt created by skrypt.sh on $(date)" > "errorx/error${i}.txt"
+        done
+        ;;
+    *)
+        echo "Nieprawidłowa opcja. Użyj --help, aby zobaczyć dostępne opcje."
+        ;;
+esac
